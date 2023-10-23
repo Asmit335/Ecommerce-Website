@@ -2,10 +2,12 @@ import React, { Fragment, useContext } from 'react'
 import { useState } from 'react';
 import Mycontext from '../../context/data/myContext';
 import {BsFillCloudSunFill} from 'react-icons/bs'
-import { RxCross2 } from 'react-icons/rx'
 import {FiSun} from 'react-icons/fi'
+import { RxCross2 } from 'react-icons/rx'
 import { Link } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
+
+
 const Navbar = () => {
   const [open, setOpen] = useState(false)
   const context=useContext(Mycontext);
@@ -83,11 +85,11 @@ const Navbar = () => {
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="#" className="-m-2 flex items-center p-2">
                     <img
-                      src="img/indiaflag.png"
+                      src=""
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
-                    <span className="ml-3 block text-base font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>NEPAL</span>
+                    <span className="ml-3 block text-base font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}></span>
                     <span className="sr-only">, change currency</span>
                   </a>
                 </div>

@@ -11,7 +11,7 @@ const MyState = (props) => {
       document.body.style.backgroundColor="black"
     }
     else{
-      setMode="light"
+      // setMode="light"
       document.body.style.backgroundColor="white"
     }
   }
