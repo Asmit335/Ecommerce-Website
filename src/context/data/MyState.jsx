@@ -15,11 +15,13 @@ const MyState = (props) => {
       document.body.style.backgroundColor="white"
     }
   }
+
+  const [loading, setLoading] = useState(false)
    
   return (
     
     <>
-    <Mycontext.Provider value={{mode,toggleMode}}>
+    <Mycontext.Provider value={{mode,toggleMode,loading,setLoading}}>
       {props.children}
     </Mycontext.Provider>
     </>

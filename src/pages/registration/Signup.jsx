@@ -1,6 +1,22 @@
 import { Link } from 'react-router-dom'
-// import './App.css'
-function Login() {
+import { useContext, useState } from 'react'
+import Mycontext from '../../context/data/MyContext'
+import { toast } from 'react-toastify'
+
+
+function Signup() {
+    const [name, setname] = useState("")
+    const [email, setemail] = useState("")
+    const [pass, setpass] = useState("")
+
+    const context=useContext(Mycontext)
+    const {loading,setLoading}=context;
+
+    const signup=()=>{
+        if(name==="" || email==="" || pass===""){
+            return toast.error("All field are required")
+        }
+    }
    
     return (
         <div className='loginContainer flex justify-center items-center h-screen'>
@@ -13,6 +29,8 @@ function Login() {
 
                 <div>
                     <input type="text"
+                    value={name}
+                    onChange={(e)=> setname(e.target.value)}
                         name='name'
                         className=' bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none'
                         placeholder='Name'
@@ -20,6 +38,8 @@ function Login() {
                 </div>
                 <div>
                     <input type="email"
+                    value={email}
+                    onChange={(e)=> setemail(e.target.value)}
                         name='email'
                         className=' bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none'
                         placeholder='Email'
@@ -27,6 +47,8 @@ function Login() {
                 </div>
                 <div>
                     <input
+                    value={pass}
+                    onChange={(e)=>setpass(e.target.value)}
                         type="password"
                         className=' bg-gray-600 mb-4 px-2 py-2 w-full lg:w-[20em] rounded-lg text-white placeholder:text-gray-200 outline-none'
                         placeholder='Password'
@@ -39,11 +61,11 @@ function Login() {
                     </button>
                 </div>
                 <div>
-                    <h2 className='text-white'> Already have an account <Link className=' text-yellow-500 font-bold' to={'/login'}>Login</Link></h2>
+                    <h2 className='text-white'> Already have an account ? <Link className=' text-yellow-500 font-bold' to={'/login'}>Login</Link></h2>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Login
+export default Signup
