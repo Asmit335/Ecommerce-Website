@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
-import Mycontext from '../../context/data/MyContext'
+import Mycontext from '../../context/data/myContext'
 import { toast } from 'react-toastify'
 
 

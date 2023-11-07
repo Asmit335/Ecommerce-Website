@@ -38,9 +38,10 @@ function Filter() {
                         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
                             <select className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0 focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '', }}>
                                 <option value="jacket">Jacket</option>
-                                <option value="shirt">shirt</option>
-                                <option value="mobile">mobile</option>
-                                <option value="jacket">Jacket</option>
+                                <option value="shirt">Shirt</option>
+                                <option value="mobile">Mobile</option>
+                                <option value="jacket">Computer</option>
+                                <option value="book">Book</option>
                             </select>
                             <select className="px-4 py-3 w-full rounded-md bg-gray-50 border-transparent outline-0  focus:border-gray-500 focus:bg-white focus:ring-0 text-sm" style={{ backgroundColor: mode === 'dark' ? 'rgb(64 66 70)' : '', color: mode === 'dark' ? 'white' : '', }}>
                                 <option value="100">100</option>
