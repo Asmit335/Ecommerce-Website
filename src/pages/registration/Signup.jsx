@@ -18,6 +18,13 @@ function Signup() {
         }
     }
    
+
+    // try {
+    //     const users = await createUserWithEmailAndPassword(auth, email, password);
+    // } catch (error) {
+        
+    // }
+
     return (
         <div className='loginContainer flex justify-center items-center h-screen'>
            
