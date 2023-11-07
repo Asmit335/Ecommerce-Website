@@ -17,7 +17,7 @@ function Testimonial() {
                                 <p style={{color: mode === 'dark' ? 'white' : ''}} className="leading-relaxed">"Your Ecommerce website is a game-changer. The seamless navigation, beautiful design, and user-friendly experience have significantly boosted our sales. Kudos to the Senior Product Designer for creating a top-notch online shopping platform!"</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 style={{color: mode === 'dark' ? '#ff4162' : ''}} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Kishor Pokhrel</h2>
-                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="text-gray-500">Senior Product Designer</p>
+                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="text-gray-500">SeniorTech Engineer</p>
                             </div>
                         </div>
                         <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
@@ -26,7 +26,7 @@ function Testimonial() {
                                 <p  style={{color: mode === 'dark' ? 'white' : ''}}className="leading-relaxed">"The Ecommerce website's UI is exceptional. Its intuitive layout and smooth functionality make shopping a breeze. Thanks to the UI Developer for crafting a user-centric platform that enhances our online shopping experience."</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 style={{color: mode === 'dark' ? '#ff4162' : ''}} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Sonam Poudel</h2>
-                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="text-gray-500">UI Develeoper</p>
+                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="text-gray-500">Senior HR</p>
                             </div>
                         </div>
                         <div className="lg:w-1/3 lg:mb-0 p-4">
@@ -35,7 +35,7 @@ function Testimonial() {
                                 <p style={{color: mode === 'dark' ? 'white' : ''}} className="leading-relaxed">"The Ecommerce website is a technological marvel. I would like to  applauds the scalability, security, and seamless integration with our systems. It's a vital asset for our business, and we're thrilled with its performance."</p>
                                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                                 <h2 style={{color: mode === 'dark' ? '#ff4162' : ''}} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Sagar Mani</h2>
-                                <p  style={{color: mode === 'dark' ? 'white' : ''}}className="text-gray-500">CTO</p>
+                                <p  style={{color: mode === 'dark' ? 'white' : ''}}className="text-gray-500">QA Engineer</p>
                             </div>
                         </div>
                     </div>

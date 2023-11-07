@@ -1,6 +1,7 @@
 {
     "name": "ecommerce",
     "private": true,
+    "homepage": "http://Asmit335.github.io/Ecommerce-Website",
     "version": "0.0.0",
     "type": "module",
     "scripts": {
@@ -17,6 +18,7 @@
         "@reduxjs/toolkit": "^1.9.7",
         "@vueuse/core": "^10.5.0",
         "firebase": "^10.5.2",
+        "gh-pages": "^6.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^4.11.0",
