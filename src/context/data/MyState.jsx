@@ -1,5 +1,7 @@
 import React from 'react'
-import Mycontext from './myContext'
+// import Mycontext from './Mycontext'
+import AsmitContext from './AsmitContext'
+
 import { useState } from 'react'
 
 const MyState = (props) => {
@@ -21,9 +23,12 @@ const MyState = (props) => {
   return (
     
     <>
-    <Mycontext.Provider value={{mode,toggleMode,loading,setLoading}}>
+    <AsmitContext.Provider value={{mode,toggleMode,loading,setLoading}}>
       {props.children}
-    </Mycontext.Provider>
+    </AsmitContext.Provider>
+    {/* <Mycontext.Provider value={{mode,toggleMode,loading,setLoading}}>
+      {props.children}
+    </Mycontext.Provider> */}
     </>
   )
 }

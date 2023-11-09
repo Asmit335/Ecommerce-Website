@@ -1,19 +1,22 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom'
-import MyContext from '../../context/data/myContext';
+// import MyContext from '../../context/data/Mycontext';
 import { toast } from 'react-toastify';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, fireDB } from '../../firebase/FirebaseConfig';
 
 import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import Loader from '../../components/loader/Loader';
+import AsmitContext from '../../context/data/AsmitContext';
+import './Login.css'
+
 
 function Signup() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const context = useContext(MyContext);
+    const context = useContext(AsmitContext);
     const { loading, setLoading } = context;
 
     const signup = async () => {
@@ -48,7 +51,7 @@ function Signup() {
     }
 
     return (
-        <div className=' flex justify-center items-center h-screen'>
+        <div className='signupContainer flex justify-center items-center h-screen'>
             {loading && <Loader/>}
             <div className=' bg-gray-800 px-10 py-10 rounded-xl '>
                 <div className="">

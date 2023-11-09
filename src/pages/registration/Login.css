@@ -1,0 +1,15 @@
+/* Login.css */
+
+.loginContainer {
+    background-image: url('/public/images/login.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.signupContainer {
+    background-image: url('/public/images/signup.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

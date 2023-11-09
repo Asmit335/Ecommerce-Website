@@ -1,10 +1,9 @@
 import React, { useContext } from 'react'
 import Layout from '../../components/layout/Layout'
-import Mycontext from '../../context/data/MyContext'
+// import Mycontext from '../../context/data/Mycontext'
 
 const Order = () => {
 
-  const context=useContext(Mycontext)
   
 
   return (

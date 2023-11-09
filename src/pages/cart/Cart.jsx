@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
-import myContext from '../../context/data/myContext';
+// import myContext from '../../context/data/Mycontext';
 import Layout from '../../components/layout/Layout';
 import Modal from '../../components/modal/Modal';
+import AsmitContext from '../../context/data/AsmitContext';
 
 
 function Cart() {
 
-  const context = useContext(myContext)
+  const context = useContext(AsmitContext)
   const { mode } = context;
 
   return (

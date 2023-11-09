@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from 'react'
 import { useState } from 'react';
-import Mycontext from '../../context/data/myContext';
+import AsmitContext from '../../context/data/AsmitContext';
+// import myContext from '../../context/data/Mycontext';
 import {BsFillCloudSunFill} from 'react-icons/bs'
 import {FiSun} from 'react-icons/fi'
 import { RxCross2 } from 'react-icons/rx'
@@ -10,7 +11,7 @@ import { Dialog, Transition } from '@headlessui/react';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
-  const context=useContext(Mycontext);
+  const context=useContext(AsmitContext);
   const {mode,toggleMode}=context;
 
   const user=JSON.parse(localStorage.getItem("user"))

@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
-import myContext from '../../context/data/myContext'
+// import myContext from '../../context/data/Mycontext'
+import AsmitContext from '../../context/data/AsmitContext';
+
 
 function Filter() {
-    const context = useContext(myContext)
+    const context = useContext(AsmitContext)
     const { mode } = context
 
     return (

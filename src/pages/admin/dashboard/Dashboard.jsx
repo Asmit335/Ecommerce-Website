@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import {FaUserTie } from 'react-icons/fa';
-import myContext from '../../../context/data/myContext';
+// import myContext from '../../../context/data/Mycontext';
 import Layout from '../../../components/layout/Layout';
 import DashboardTab from './DashboardTab';
+import AsmitContext from '../../../context/data/AsmitContext';
 
 function Dashboard() {
-    const context = useContext(myContext)
+    const context = useContext(AsmitContext)
     const { mode} = context
   return (
     <Layout>

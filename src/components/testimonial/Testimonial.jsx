@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
-import myContext from '../../context/data/myContext'
+import AsmitContext from '../../context/data/AsmitContext';
+
+// import myContext from '../../context/data/Mycontext'
 
 function Testimonial() {
-    const context = useContext(myContext)
+    const context = useContext(AsmitContext)
     const { mode } = context
     return (
         <div>

@@ -1,17 +1,19 @@
 import { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Mycontext from '../../context/data/myContext'
+// import Mycontext from '../../context/data/Mycontext'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { toast } from 'react-toastify'
 import Loader from '../../components/loader/Loader'
 import { auth } from '../../firebase/FirebaseConfig'
+import AsmitContext from '../../context/data/AsmitContext';
+import  './Login.css'
 // import './App.css'
 function Login() {
 
     const [email, setemail] = useState("")
     const [pass, setpass] = useState("")
 
-    const context=useContext(Mycontext)
+    const context=useContext(AsmitContext)
     const{loading,setLoading}=context
 
     const navigate=useNavigate()
@@ -38,6 +40,7 @@ function Login() {
    
     return (
         <div className='loginContainer flex justify-center items-center h-screen'>
+
            {loading && <Loader></Loader>}
             <div className=' bg-indigo-800 px-10 py-10 rounded-xl '>
               
