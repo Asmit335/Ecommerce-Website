@@ -13,6 +13,13 @@ const Navbar = () => {
   const context=useContext(Mycontext);
   const {mode,toggleMode}=context;
 
+  const user=JSON.parse(localStorage.getItem("user"))
+
+  const logout=()=>{
+    localStorage.clear("user")
+    window.location.href='/login'
+  }
+
   return (
     <>
     {/* Mobile menu */}
@@ -56,22 +63,35 @@ const Navbar = () => {
                   <Link to={'/allproducts'} className="text-sm font-medium text-gray-900 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     All Products
                   </Link>
+
+                  {user ? 
                   <div className="flow-root">
                     <Link to={'/order'} style={{ color: mode === 'dark' ? 'white' : '', }} className="-m-2 block p-2 font-medium text-gray-900">
                       Order
                     </Link>
                   </div>
+                  :""}
+
 
                   <div className="flow-root">
+                    {user?.user?.email==='asmitkhanal335@gmail.com' ?
                     <Link to={'/dashboard'} className="-m-2 block p-2 font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>
-                      admin
-                    </Link>
+                      Admin
+                    </Link>:""}
+                    
                   </div>
 
                   <div className="flow-root">
-                    <a className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    {user ? 
+                    <a onClick={logout} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
                       Logout
-                    </a>
+                    </a>:""}
+                  </div>
+                  <div className="flow-root">
+                    {! user ? 
+                    <a onClick={logout} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                      Login
+                    </a>:""}
                   </div>
                   <div className="flow-root">
                     <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
@@ -132,16 +152,27 @@ const Navbar = () => {
                   <Link to={'/allproducts'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     All Products
                   </Link>
+                  {user?
                   <Link to={'/order'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Order
                   </Link>
+                  :""}
+                  
+                  {user?.user?.email==='asmitkhanal335@gmail.com' ?
                   <Link to={'/dashboard'} className="text-sm font-medium text-gray-700 " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Admin
-                  </Link>
+                  </Link>:""}
 
-                  <a className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                  {user?
+                  <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
                     Logout
-                  </a>
+                  </a>:""}
+
+                  {!user?
+                  <a onClick={logout} className="text-sm font-medium text-gray-700 cursor-pointer  " style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    Login
+                  </a>:""}
+
                 </div>
 
 

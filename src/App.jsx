@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import { BrowserRouter as Router,Routes,Route, Navigate } from 'react-router-dom';
 import Home from './pages/home/Home';
 import Order from './pages/order/Order';
 import Cart from './pages/cart/Cart';
@@ -21,15 +21,23 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/order" element={<Order />} />
+        <Route path="/order" element={<ProtectedroutesForUser>
+          <Order />
+        </ProtectedroutesForUser>} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<ProtectedrouteForAdmin>
+          <Dashboard />
+        </ProtectedrouteForAdmin>} />
         <Route path="/login" element={<Login/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/productinfo/:id" element={<ProductInfo/>}/>
         <Route path="/cart" element={<Cart/>}/>
-        <Route path="/updateproduct" element={<UpdateProduct/>}/>
-        <Route path="/addproduct" element={<AddProduct/>}/>
+        <Route path="/updateproduct" element={<ProtectedrouteForAdmin>
+          <UpdateProduct/>
+        </ProtectedrouteForAdmin>}/>
+        <Route path="/addproduct" element={<ProtectedrouteForAdmin>
+          <AddProduct/>
+        </ProtectedrouteForAdmin>}/>
         <Route path="/*" element={<Nopage />} />
       </Routes>
       <ToastContainer/>
@@ -40,3 +48,29 @@ const App = () => {
 };
 
 export default App;
+
+//ForUser
+
+export const ProtectedroutesForUser=({children})=>{
+  const user = localStorage.getItem('user')
+  if(user){
+    return children
+  }
+  else{
+    return <Navigate to='/login'/>
+  }
+}
+
+//ForAdmin
+
+export const ProtectedrouteForAdmin=({children})=>{
+  const admin=JSON.parse(localStorage.getItem('user'))
+
+  if(admin.user.email==='asmitkhanal335@gmail.com')
+  {
+    return children
+  }
+  else{
+    return <Navigate to="/login"/>
+  }
+}
