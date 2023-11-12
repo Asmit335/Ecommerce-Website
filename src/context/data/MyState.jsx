@@ -3,7 +3,7 @@ import AsmitContext from './AsmitContext'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { fireDB } from '../../firebase/FirebaseConfig';
-import { Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 
 const MyState = (props) => {
   const [mode, setMode] = useState("light")
@@ -143,10 +143,36 @@ const deleteProduct=async(e)=>{
   }
 }
 
+// order function
+const [order, setOrder] = useState([])
+
+const getOrderData = async()=>{
+  setLoading(true)
+  try {
+    const result=await getDocs(fireDB,"order");
+    const orderArry=[]
+    result.forEach((doc)=>{
+      orderArry.push(doc.data())
+      setLoading(false)
+    })
+    setOrder(orderArry)
+    setLoading(false)
+  }
+   catch (error) {
+    console.log(error);z
+    setLoading(false)
+    
+  }
+}
+
+useEffect(()=>{
+  getOrderData()
+},[])
+
   return (
     
     <>
-    <AsmitContext.Provider value={{mode,toggleMode,loading,setLoading,product,setproduct,addProduct,getProduct,setgetProduct,edithandle,updateProduct,deleteProduct}}>
+    <AsmitContext.Provider value={{mode,toggleMode,loading,setLoading,product,setproduct,addProduct,getProduct,setgetProduct,edithandle,updateProduct,deleteProduct,order}}>
       {props.children}
     </AsmitContext.Provider>
     {/* <Mycontext.Provider value={{mode,toggleMode,loading,setLoading}}>
