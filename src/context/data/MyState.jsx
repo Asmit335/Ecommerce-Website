@@ -3,7 +3,7 @@ import AsmitContext from './AsmitContext'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { fireDB } from '../../firebase/FirebaseConfig';
-import { Timestamp, addDoc, collection, onSnapshot, orderBy, query } from 'firebase/firestore';
+import { Timestamp, addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, setDoc } from 'firebase/firestore';
 
 const MyState = (props) => {
   const [mode, setMode] = useState("light")
@@ -56,7 +56,7 @@ const MyState = (props) => {
         window.location.href='/dashboard'
       }, 800);
       getProductData()
-      closeModal()
+      // closeModal()
       setLoading(false)
       
     } catch (error) {
@@ -102,10 +102,51 @@ useEffect(()=>{
   getProductData();
 },[])
 
+//update product function
+
+const edithandle=(e)=>{
+  setproduct(e)
+}
+
+const updateProduct=async()=>{
+  setLoading(true)
+  try {
+    await setDoc(doc(fireDB,"products",product.id),product)
+    toast.success("Product Updated Successfully")
+    getProductData()
+    setTimeout(() => {
+      window.location.href='/dashboard'
+    }, 800);
+    setLoading(false)
+    
+  } catch (error) {
+    console.log(error)
+    setLoading(false)
+    
+  }
+}
+
+
+//delete product
+
+const deleteProduct=async(e)=>{
+  setLoading(true)
+  try {
+    await deleteDoc(doc(fireDB,"products",e.id))
+    toast.success("Product Deleted Successfully")
+    setLoading(false)
+  }
+   catch (error) {
+    console.log(error);
+    setLoading(false)
+    
+  }
+}
+
   return (
     
     <>
-    <AsmitContext.Provider value={{mode,toggleMode,loading,setLoading,product,setproduct,addProduct,getProduct,setgetProduct}}>
+    <AsmitContext.Provider value={{mode,toggleMode,loading,setLoading,product,setproduct,addProduct,getProduct,setgetProduct,edithandle,updateProduct,deleteProduct}}>
       {props.children}
     </AsmitContext.Provider>
     {/* <Mycontext.Provider value={{mode,toggleMode,loading,setLoading}}>
