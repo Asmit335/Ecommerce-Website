@@ -17,7 +17,6 @@
 // const auth=getAuth(app)
 // export {fireDB,auth};
 
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore"; // Correct the function name
@@ -29,7 +28,7 @@ const firebaseConfig = {
   projectId: "easy-site-f273b",
   storageBucket: "easy-site-f273b.appspot.com",
   messagingSenderId: "356815667437",
-  appId: "1:356815667437:web:bd7622f97385495a6f0ce4"
+  appId: "1:356815667437:web:bd7622f97385495a6f0ce4",
 };
 
 // Initialize Firebase
